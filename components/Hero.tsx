@@ -28,7 +28,7 @@ const Hero = () => {
     <div className='hero__image-container'>
     <div className="relative w-full h-64 md:h-96">
         <Image
-            src="/hero.png"
+            src="/SolarPannelImage.jpg"
             alt="hero"
             fill
             className="object-contain"

@@ -4,40 +4,47 @@ import CustomButton from './CustomButton';
 import { CustomButtonProps } from '../types';
 
 const Hero = () => {
-    const handleScroll = () => {
-    // Scroll logic will go here
+const handleScroll = () => {
     console.log("Button clicked, scroll handler triggered!");
-    };
+};
 
-    return (
-        <div className="flex items-center justify-center min-h-[80vh] bg-gradient-to-br from-[#e0f7fa] to-[#fffde7] text-center">
-        <div className="flex-1 pt-2 px-6">
-        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-[#12408a] drop-shadow-sm animate-floatIn">
+return (
+    <div className="flex flex-col md:flex-row items-center justify-between min-h-[80vh] bg-gradient-to-br from-[#e0f7fa] to-[#fffde7] px-6 md:px-20 py-10 gap-10">
+    
+      {/* LEFT TEXT SIDE */}
+    <div className="flex-1 text-center md:text-left">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-[#12408a] drop-shadow-sm animate-floatIn leading-tight">
         🌞 AI SOLAR WATER ASSISTANT
         </h1>
-        <p className="text-xl font-normal text-black mt-2">
+        <p className="text-xl font-normal text-black mt-4">
         Smart. Sustainable. Self-sufficient.
         </p>
-
+        <div className="mt-8 flex justify-left md:justify-start">
         <CustomButton
-        title="AI Solar"
-        containerStyles="bg-blue-600 text-white rounded-full mt-10 px-6 py-3 hover:bg-blue-700 transition"
-        handleClick={handleScroll}
+            title="Explore Assistant"
+            containerStyles="bg-blue-600 text-white rounded-full px-2 py-3 hover:bg-blue-700 transition"
+            handleClick={handleScroll}
         />
+        </div>
     </div>
-    <div className='hero__image-container'>
-    <div className="relative w-full h-64 md:h-96">
+
+
+    <div className="flex-1 flex justify-center items-center w-full">
+        <div className="relative w-full max-w-[1350px] h-[300px] sm:h-[450px] md:h-[450px]">
+        <div className="absolute -top-10 -right-10 w-[600px] h-[500px] bg-blue-500 rotate-[25deg] rounded-md -z-10 shadow-2xl opacity-90" />
         <Image
-            src="/SolarPannelImage.jpg"
+            src="/blueSolar.png"
             alt="hero"
             fill
             className="object-contain"
             priority
         />
-</div>
+        
         </div>
     </div>
-    );
+
+    </div>
+);
 };
 
 export default Hero;

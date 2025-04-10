@@ -1,9 +1,12 @@
 "use client";
 import Image from 'next/image';
 import CustomButton from './CustomButton';
+import { useRouter } from 'next/router';
 import { CustomButtonProps } from '../types';
 
 const Hero = () => {
+
+
 const handleScroll = () => {
     console.log("Button clicked, scroll handler triggered!");
 };

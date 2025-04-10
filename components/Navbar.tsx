@@ -22,8 +22,6 @@ const Navbar = () => {
         btnType = "button"
         containerStyles='text-primary-blue
         rounded-full bg-blue-400 min-w-[130px]' />
-
-      
       </nav>
     </header>
   )

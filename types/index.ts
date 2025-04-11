@@ -6,5 +6,6 @@ export interface CustomButtonProps {
     handleClick?: 
     MouseEventHandler<HTMLButtonElement>;
     btnType?: "button" | "submit" ;
+    children?: React.ReactNode;
 
 }

@@ -1,14 +1,16 @@
 import React from 'react';
+import CustomChatBot from '../../../components/chat-bot/CustomChatBot';
 
-const ChatBots = () => {
+const ChatBot = () => {
     return (
-        <div className="flex items-center justify-center min-h-screen bg-gray-100">
-            <div className="bg-white p-6 rounded-2xl shadow-md text-center">
-                <h1 className="text-2xl font-bold text-green-600 mb-2">Chatbot</h1>
-                <p className="text-gray-700">Powered by OpenAI</p>
+        <div className="flex items-center justify-center min-h-screen bg-gray-200 px-4">
+            <div className="bg-white w-full max-w-4xl p-10 rounded-3xl shadow-lg text-center">
+                <h1 className="text-4xl font-bold text-green-600 mb-4">Chatbot</h1>
+                <p className="text-lg text-gray-700 mb-6">Powered by OpenAI</p>
+                <CustomChatBot />
             </div>
         </div>
     );
 };
 
-export default ChatBots;
+export default ChatBot;

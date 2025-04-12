@@ -1,14 +1,14 @@
 "use client";
 import Image from 'next/image';
 import CustomButton from './CustomButton';
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 import { CustomButtonProps } from '../types';
 
 const Hero = () => {
-
+    const router = useRouter();
 
 const handleScroll = () => {
-    console.log("Button clicked, scroll handler triggered!");
+    router.push('/sign-in')
 };
 
 return (
@@ -24,7 +24,7 @@ return (
         </p>
         <div className="mt-8 flex justify-left md:justify-start">
         <CustomButton
-            title="Explore Assistant"
+            title="Explore AI Assistant"
             containerStyles="bg-blue-600 text-white rounded-full px-2 py-3 hover:bg-blue-700 transition"
             handleClick={handleScroll}
         />

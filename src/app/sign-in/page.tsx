@@ -10,11 +10,18 @@ import {
 import Separator from "../../../components/separator"
 import Input from "../../../components/input"
 import Link from "next/link"
+import { useRouter } from 'next/navigation';
 
 //react icons
 import{SiGmail} from "react-icons/si"
 import {FcGoogle} from "react-icons/fc"
 const SignIn = () => {
+    const router = useRouter();
+
+    const handleScroll = () => {
+        router.push('/chat-bot')
+    };
+    
     return (
     <div className="h-full flex items-center justify-center bg-blue-100">
         <Card className = "md:h-auto w-[80%] sm:w-[420px] p-4 sm:p-8">
@@ -52,27 +59,11 @@ const SignIn = () => {
                     title="Continue"
                     containerStyles="w-full bg-blue-600 text-white rounded-full px-2 py-3 hover:bg-blue-700 transition"
                     btnType="submit"
+                    handleClick={handleScroll}
                     />
                     
 
                 </form>
-                <Separator/>
-                <div className = "flex my-2 justify-evenly mx-auto items-center">
-                    <CustomButton
-                    title=""
-                    containerStyles="bg-state-300 hover:bg-blue-400 hover:scale-100"
-                    handleClick={() =>{}}
-                    >
-                    <FcGoogle className = "size-8 left-2.5 top-2.5"/>
-                    </CustomButton>
-                    <CustomButton
-                    title=""
-                    containerStyles="bg-state-300 hover:bg-blue-400 hover:scale-100"
-                    handleClick={() =>{}}
-                    >
-                    <SiGmail className = "size-8 left-2.5 top-2.5"/>
-                    </CustomButton>
-                </div>
 
             </CardContent>
         

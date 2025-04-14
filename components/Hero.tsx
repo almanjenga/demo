@@ -1,14 +1,16 @@
 "use client";
 import Image from 'next/image';
+import{useState} from 'react';
 import CustomButton from './CustomButton';
 import { useRouter } from 'next/navigation';
 import { CustomButtonProps } from '../types';
+import CustomChatBot from './chat-bot/CustomChatBot';
 
 const Hero = () => {
     const router = useRouter();
 
 const handleScroll = () => {
-    router.push('/sign-in')
+    router.push('')
 };
 
 return (
@@ -43,7 +45,7 @@ return (
         </div>
         <div className="hero__image-overlay absolute xl:-top-24 xl:-right-1/2 -right-1/4 bg-hero-bg bg-repeat-round -z-10 w-full xl:h-screen h-[590px] overflow-hidden" />
     </div>
-
+    <CustomChatBot/>
     </div>
 );
 };

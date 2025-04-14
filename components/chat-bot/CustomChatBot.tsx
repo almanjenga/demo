@@ -5,22 +5,28 @@ import {TbMessageChatbot} from "react-icons/tb"
 
 
 export  default function CustomChatBot() {
-    const [showChat, setShowChat] = useState(true);
+    const [showChat, setShowChat] = useState(false);
     return(
-        <div className="w-screen h-screen">
+        <div className=" w-screen h-screen">
             <TbMessageChatbot 
                 size={64} 
+                onClick={()=>setShowChat(!showChat)}
                 className="text-blue-600 fixed bottom-6 right-6 cursor-pointer hover:scale-110 transition-transform duration-200" 
             />
             {
                 showChat && (
-                    <div>
-                        <div>
+                    <div className="fixed right-1 bottom-[calc(4rem+1.5rem)] hover:cursor-pointer p-5 shadow-md shadow-blue-600 h-[300px] w-[500px] bg-white">
+                        <div className="flex flex-col h-full">
                            {/* Chatbot header */} 
                             <div>
-                            <h2>Chatbot </h2>
+                            <h2 className="font-semibold text-lg tracking-tight">Chatbot </h2>
                             <p>Davis and Shirtliff Ai</p>
                             </div>
+
+                            {/* Chatbot Container */}
+                            <div className=" flex flex-col flex-1 item-center p-2 mt-5 overflow-y-auto">
+                                <div>Messages...</div>
+                                </div>
                         </div>
                     </div>
                 )

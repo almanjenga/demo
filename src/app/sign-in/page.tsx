@@ -19,7 +19,7 @@ const SignIn = () => {
     const router = useRouter();
 
     const handleScroll = () => {
-        router.push('/chat-bot')
+        router.push('')
     };
     
     return (

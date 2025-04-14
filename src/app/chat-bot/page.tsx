@@ -1,15 +1,24 @@
-import React from 'react';
-import CustomChatBot from '../../../components/chat-bot/CustomChatBot';
+    "use client";
 
-const ChatBot = () => {
+import BotMessage from "../../../components/chat-bot/ui/bot-message";
+
+    export default function ChatBot() {
     return (
-        <div className="flex w-screen h-screen  min-h-screen bg-gray-200 px-4">
-            <div className="bg-white w-full max-w-4xl p-10 rounded-3xl shadow-lg text-center">
-                <h1 className="text-4xl font-bold text-blue-600 mb-4">Chatbot</h1>
-                <CustomChatBot/>
-            </div>
+        <div className="w-screen h-screen bg-gray-100 flex flex-col pt-20">
+        {/* Chatbot Header */}
+        <div className="bg-blue-600 text-white px-6 py-4 shadow-md">
+            <h2 className="text-2xl font-semibold">Davis & Shirtliff AI Solar Hot Water Assistant</h2>
+            
+        </div>
+
+        {/* Chat container */}
+        <div className="flex-1 overflow-y-auto p-6 space-y-4">
+            {/* Bot message */}
+        <BotMessage/>
+
+            {/* User message */}
+        
+        </div>
         </div>
     );
-};
-
-export default ChatBot;
+    }

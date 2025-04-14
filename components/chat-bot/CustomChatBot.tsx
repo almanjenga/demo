@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import {TbMessageChatbot} from "react-icons/tb"
+import BotMessage from "./ui/bot-message";
 
 
 
@@ -28,6 +29,8 @@ export  default function CustomChatBot() {
                                 <div>Messages...</div>
                                 </div>
                         </div>
+                        {/* Message Input field */}
+                        <BotMessage/>
                     </div>
                 )
 

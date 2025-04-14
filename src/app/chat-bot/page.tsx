@@ -1,6 +1,8 @@
     "use client";
 
 import BotMessage from "../../../components/chat-bot/ui/bot-message";
+import ChatInput from "../../../components/chat-bot/ui/chat-input";
+import UserMessage from "../../../components/chat-bot/ui/user-message";
 
     export default function ChatBot() {
     return (
@@ -17,8 +19,11 @@ import BotMessage from "../../../components/chat-bot/ui/bot-message";
         <BotMessage/>
 
             {/* User message */}
+            <UserMessage/>
         
         </div>
+        {/* Chat input */}
+        <ChatInput/>
         </div>
     );
     }

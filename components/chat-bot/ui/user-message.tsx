@@ -1,18 +1,19 @@
-"use client"
-import {CiUser} from "react-icons/ci"
+"use client";
 
-export default function UserMessage(){
-    return(
-        <div className="flex w-full my-2 justify-end">
-            <div className="flex justify-center p-1 w-8 h-8 border bg-blue-500 rounded-full mr-2">
-                <CiUser size={18}/>
-            </div>
-            <div className="text-left border bg-gray-200 p-2 rounded-lg">
-                <div>User</div>
-                <p>Hey, I need help with solar quotation</p>
-            </div>
-        </div>
-    )
-        
-    
+import React from "react";
+
+interface UserMessageProps {
+  message: string;
 }
+
+const UserMessage: React.FC<UserMessageProps> = ({ message }) => {
+  return (
+    <div className="bg-blue-100 p-4 rounded shadow w-fit max-w-md self-end">
+      <p className="text-sm text-gray-900">
+        <strong>You:</strong> {message}
+      </p>
+    </div>
+  );
+};
+
+export default UserMessage;

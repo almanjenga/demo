@@ -1,23 +1,36 @@
-import CustomButton from "../../CustomButton";
+"use client";
 
+import { useState, FormEvent } from "react";
 
+interface ChatInputProps {
+  onSend: (message: string) => void;
+}
 
-export default function ChatInput(){
-    const handleSend =()=>{
+export default function ChatInput({ onSend }: ChatInputProps) {
+  const [input, setInput] = useState("");
 
-    }
-    return (
-        
-        <div className="flex space-x-10 items-center mt-auto">
-            <form className="flex items-center justify-center w-full space-x-2">
-                <input type = 'text'
-                placeholder="Add the details here"
-                className="flex h-10 w-full rounded-md border border-width:2px border-blue-500 px-3 text-sm text-black"/>
-                <CustomButton
-                title="Send"
-                handleClick={handleSend}
-                containerStyles="p-2 bg-blue-600 text-white inline-flex items-center justify-center rounded-md text-sm font-large px-4 py-2"/>
-            </form>
-        </div>
-    )
+  const handleSubmit = (e: FormEvent) => {
+    e.preventDefault();
+    if (!input.trim()) return;
+    onSend(input);
+    setInput("");
+  };
+
+  return (
+    <form onSubmit={handleSubmit} className="p-4 bg-white shadow-md flex">
+      <input
+        type="text"
+        value={input}
+        onChange={(e) => setInput(e.target.value)}
+        className="flex-1 border rounded p-2"
+        placeholder="Ask me anything about solar hot water..."
+      />
+      <button
+        type="submit"
+        className="ml-2 px-4 py-2 bg-blue-600 text-white rounded"
+      >
+        Send
+      </button>
+    </form>
+  );
 }
